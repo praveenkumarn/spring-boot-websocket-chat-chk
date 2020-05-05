@@ -46,6 +46,28 @@ sudo -S docker tag spring-boot-websocket-chat-demo praveenkumarnagarajan/spring-
 cat ~/pass.txt | sudo -S docker login --username praveenkumarnagarajan --password-stdin
 
 sudo -S docker push praveenkumarnagarajan/spring-boot-websocket-chat-demo:0.0.1-SNAPSHOT 
+
+
+docker pull praveenkumarnagarajan/spring-boot-websocket-chat-demo:0.0.1-SNAPSHOT
+
+
+docker image ls
+
+kubectl run kubernetes-springboot --image=praveenkumarnagarajan/spring-boot-websocket-chat-demo:0.0.1-SNAPSHOT --port=8080
+
+kubectl expose deployment/kubernetes-springboot --type="NodePort" --port 8080
+
+
+kubectl get nodes
+
+kubectl get services
+
+kubectl describe services/kubernetes-springboot
+
+
+""" 
+
+
  ''' 
 	}
 }
